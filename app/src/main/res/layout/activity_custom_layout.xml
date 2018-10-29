@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.blood.highengineeradvance.ui.customview.CustomLayoutActivity">
+
+    <LinearLayout
+        android:id="@+id/parentlayout"
+        android:background="#55889966"
+        android:orientation="vertical"
+        android:layout_width="80dp"
+        android:layout_height="100dp">
+
+        <com.blood.highengineeradvance.ui.customview.layout.CustomWHView
+            android:src="@drawable/ic_launcher"
+            android:background="#665533"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/seekbar1"
+            android:max="100"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.AppCompatSeekBar
+            android:id="@+id/seekbar2"
+            android:max="100"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

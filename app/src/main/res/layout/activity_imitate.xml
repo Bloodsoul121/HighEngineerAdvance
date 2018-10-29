@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.blood.highengineeradvance.ui.customview.ImitateActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.blood.highengineeradvance.ui.customview.imitate.StarView
+            android:id="@+id/starview"
+            android:background="#669977"
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/editview"
+                android:hint="请输入数字"
+                android:inputType="number"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/confirm"
+                android:text="确定"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+        <com.blood.highengineeradvance.ui.customview.imitate.TapeView
+            android:id="@+id/tapeview"
+            android:background="#446688"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.imitate.XiaomiSportsCircleView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.imitate.XiaomiTestView
+            android:background="#669966"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
+        <com.blood.highengineeradvance.ui.customview.imitate.XiaomiTestView2
+            android:background="#467815"
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
+        <com.blood.highengineeradvance.ui.customview.imitate.FlipboardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.imitate.MapView
+            android:id="@+id/mapview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+    </LinearLayout>
+
+</ScrollView>

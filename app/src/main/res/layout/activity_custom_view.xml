@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.blood.highengineeradvance.ui.customview.CustomViewActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.blood.highengineeradvance.ui.customview.animate.KeyFrameView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.animate.PointView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.animate.PathAnimateView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.FlipboardView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.ColorView
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.CircleView
+            android:id="@+id/circleview"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"/>
+
+        <com.blood.highengineeradvance.ui.customview.view.LoveView
+            android:id="@+id/loveview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.PieView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.GradientView
+            android:layout_width="match_parent"
+            android:layout_height="600dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.ColorFilterView
+            android:layout_width="match_parent"
+            android:layout_height="800dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.StrokenCapView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.StrokenJoinView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.EffectView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.FillPathView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.TextPathView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.DrawTextView
+            android:layout_width="match_parent"
+            android:layout_height="800dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.ValueTextView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.ClipView
+            android:layout_width="match_parent"
+            android:layout_height="400dp" />
+
+        <com.blood.highengineeradvance.ui.customview.view.CameraView
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+    </LinearLayout>
+
+</ScrollView>
