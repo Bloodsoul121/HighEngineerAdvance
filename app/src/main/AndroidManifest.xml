@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.blood.highengineeradvance">
 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -18,9 +20,11 @@
         </activity>
         <activity android:name=".ui.customview.CustomViewActivity" />
         <activity android:name=".ui.customview.PointAnimaterActivity" />
-        <activity android:name=".ui.customview.ImitateActivity"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".ui.customview.CustomLayoutActivity"/>
+        <activity
+            android:name=".ui.customview.ImitateActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".ui.customview.CustomLayoutActivity" />
+        <activity android:name=".toutiao.ToutiaoActivity"/>
     </application>
 
 </manifest>
