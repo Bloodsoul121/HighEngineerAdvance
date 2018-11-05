@@ -78,7 +78,8 @@ public class HomeFragment extends Fragment {
     private void initData() {
         mDatas = new ArrayList<>();
         for (String mItemName : mItemNames) {
-            mDatas.add(ItemFragment.newInstance(mItemName));
+//            mDatas.add(ItemFragment.newInstance(mItemName)); // SwipeRefreshLayout
+            mDatas.add(XItemFragment.newInstance(mItemName)); // XRecyclerView
         }
         mAdapter.notifyDataSetChanged();
         mIndicator.notifyDataSetChanged(); // indicator 也需要刷新
