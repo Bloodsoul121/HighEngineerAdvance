@@ -2,7 +2,6 @@ package com.blood.highengineeradvance.toutiao.fragment;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -20,7 +19,6 @@ import android.widget.TextView;
 import com.blood.highengineeradvance.R;
 import com.blood.highengineeradvance.toutiao.recyclerview.BaseRecyViewHolder;
 import com.blood.highengineeradvance.toutiao.recyclerview.PageRecyAdapter;
-import com.blood.highengineeradvance.util.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        onClick(4);
+        onClick(4);
     }
 
     @SuppressLint("MissingPermission")

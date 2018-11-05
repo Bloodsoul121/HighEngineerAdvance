@@ -1,88 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <View
-        android:background="#d43d3d"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/container"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_width="0dp"
-        android:layout_height="0dp"/>
-
-    <com.blood.highengineeradvance.toutiao.view.CustomPageTextView
-        android:id="@+id/search_bar"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_publish"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_publish"
-        app:layout_constraintRight_toLeftOf="@+id/btn_publish"
-        app:layout_constraintHorizontal_weight="6"
-        custom:leftDrawable="@drawable/b41"
-        custom:textColor="#222222"
-        custom:textSize="16sp"
-        custom:text="利用合理资源利用合理资源利用合理资源利用合理资源利用合理资源利用合理资源利用合理资源利用合理资源利用合理资源"
-        custom:paddingLeft="8dp"
-        custom:paddingRight="8dp"
-        custom:paddingTop="8dp"
-        custom:paddingBottom="8dp"
-        custom:paddingDrawable="6dp"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/bg_search_bar"
-        android:layout_width="0dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="10dp" />
-
-    <!--<EditText-->
-        <!--android:id="@+id/search_bar"-->
-        <!--android:gravity="center_vertical"-->
-        <!--android:hint="李咏的父亲简介 | 54天14位名家去世"-->
-        <!--android:drawableLeft="@drawable/b41"-->
-        <!--android:paddingLeft="8dp"-->
-        <!--android:drawablePadding="6dp"-->
-        <!--android:paddingTop="2dp"-->
-        <!--android:paddingBottom="2dp"-->
-        <!--android:textColorHint="#222222"-->
-        <!--android:textSize="16sp"-->
-        <!--android:background="@drawable/bg_search_bar"-->
-        <!--android:cursorVisible="false"-->
-        <!--app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="@+id/btn_publish"-->
-        <!--app:layout_constraintBottom_toBottomOf="@+id/btn_publish"-->
-        <!--app:layout_constraintRight_toLeftOf="@+id/btn_publish"-->
-        <!--app:layout_constraintHorizontal_weight="6"-->
-        <!--android:layout_width="0dp"-->
-        <!--android:layout_height="27dp"-->
-        <!--android:layout_marginLeft="10dp"-->
-        <!--android:layout_marginStart="10dp"-->
-        <!--android:paddingStart="8dp"-->
-        <!--android:drawableStart="@drawable/b41"-->
-        <!--tools:ignore="RtlSymmetry" />-->
-    
-    <ImageView
-        android:id="@+id/btn_publish"
-        android:src="@drawable/b6l"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/search_bar"
-        app:layout_constraintBottom_toTopOf="@+id/container"
-        app:layout_constraintHorizontal_weight="1"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content" />
-
     <FrameLayout
         android:id="@+id/container"
-        app:layout_constraintTop_toBottomOf="@+id/btn_publish"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/home"
-        app:layout_constraintVertical_weight="1"
+        app:layout_constraintBottom_toTopOf="@id/home"
         android:layout_width="0dp"
         android:layout_height="0dp"/>
 

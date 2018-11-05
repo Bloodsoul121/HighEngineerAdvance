@@ -1,20 +1,22 @@
 package com.blood.highengineeradvance.toutiao;
 
 import android.graphics.Color;
+import android.support.constraint.Group;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.blood.highengineeradvance.R;
 import com.blood.highengineeradvance.statusbar.StatusBar;
 import com.blood.highengineeradvance.toutiao.fragment.HomeFragment;
 import com.blood.highengineeradvance.toutiao.view.CustomPageTextView;
+import com.blood.highengineeradvance.util.KeyboardUtils;
 
 public class ToutiaoActivity extends AppCompatActivity {
-
-    private CustomPageTextView mCustomPageTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,18 +29,9 @@ public class ToutiaoActivity extends AppCompatActivity {
     private void init() {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        HomeFragment homeFragment = new HomeFragment();
+        HomeFragment homeFragment = HomeFragment.newInstance();
         transaction.replace(R.id.container, homeFragment);
         transaction.commit();
-
-        mCustomPageTextView = findViewById(R.id.search_bar);
-        mCustomPageTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCustomPageTextView.setTextByPage("我的李白天下无敌");
-            }
-        });
-
     }
 
 }
