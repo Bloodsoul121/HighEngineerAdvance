@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#fafafa"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/options"
+        android:background="@drawable/b8r"
+        android:orientation="horizontal"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="3dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:drawableTop="@drawable/b2x"
+            android:text="提问"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="#515151"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:drawableTop="@drawable/b38"
+            android:text="拍小视频"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="#515151"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:drawableTop="@drawable/b3e"
+            android:text="发视频"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="#515151"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:drawableTop="@drawable/b2d"
+            android:text="提问"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="#515151"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/cancel"
+        android:src="@drawable/bft"
+        android:layout_below="@+id/options"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="ContentDescription" />
+
+</RelativeLayout>
