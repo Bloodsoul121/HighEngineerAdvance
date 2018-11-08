@@ -50,7 +50,7 @@ public class ItemFragment extends Fragment {
 
     private void initView(View view) {
         mSwipeRefreshLayout = view.findViewById(R.id.swiperefreshlayout);
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerview);
+        RecyclerView recyclerView = view.findViewById(R.id.add_channel_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         mAdapter = new NewsAdapter(getContext());
         mAdapter.bindRecyclerView(recyclerView);
@@ -135,7 +135,7 @@ public class ItemFragment extends Fragment {
         }
 
         @Override
-        protected int getItemLayoutId() {
+        protected int getItemLayoutId(int viewType) {
             return R.layout.layout_recy_item_news;
         }
 

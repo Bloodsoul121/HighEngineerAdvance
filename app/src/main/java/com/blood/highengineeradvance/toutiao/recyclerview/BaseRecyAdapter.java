@@ -34,16 +34,17 @@ public abstract class BaseRecyAdapter<T> extends RecyclerView.Adapter<BaseRecyVi
     protected View mInitLoadingView; //首次预加载view
     protected View mReloadView; //首次预加载失败、或无数据的view
     protected RelativeLayout mFooterLayout;//FooterView
-    private OnRecyclerViewItemClickerListener mItemClickListener;
+    private OnRecyclerViewItemClickListener mItemClickListener;
+    private OnRecyclerViewItemLongClickListener<T> mItemLongClickListener;
     private ArrayList<Integer> mItemChildIds;
     private ArrayList<OnItemChildClickListener<T>> mItemChildListeners;
 
     protected boolean mShowHeaderView;//是否显示HeaderView
     protected boolean mIsInitDataEnd;//是否已经初始化过数据了
 
-    protected abstract int getItemLayoutId();
+    protected abstract int getItemLayoutId(int viewType);
 
-    protected int getViewType(T data, int position) {
+    protected int getViewType(int position) {
         return TYPE_COMMON_VIEW;
     }
 
@@ -109,7 +110,7 @@ public abstract class BaseRecyAdapter<T> extends RecyclerView.Adapter<BaseRecyVi
             return TYPE_FOOTER_VIEW;
         }
 
-        return getViewType(mDatas.get(position - getHeaderCount()), position - getHeaderCount());
+        return getViewType(position - getHeaderCount());
     }
 
     @Override
@@ -119,7 +120,7 @@ public abstract class BaseRecyAdapter<T> extends RecyclerView.Adapter<BaseRecyVi
         }
 
         if (isCommonItemView(viewType)) {
-            return BaseRecyViewHolder.create(mContext, getItemLayoutId(), parent);
+            return BaseRecyViewHolder.create(mContext, getItemLayoutId(viewType), parent);
         }
 
         BaseRecyViewHolder viewHolder = null;
@@ -150,7 +151,7 @@ public abstract class BaseRecyAdapter<T> extends RecyclerView.Adapter<BaseRecyVi
     }
 
     private void bindCommonItem(final BaseRecyViewHolder holder, final int position) {
-        final T t = mDatas.get(position);
+        final T t = getItemData(holder, position);
         onBindItemViewHolder(holder, t, position);
 
         holder.getItemView().setOnClickListener(new View.OnClickListener() {
@@ -173,6 +174,20 @@ public abstract class BaseRecyAdapter<T> extends RecyclerView.Adapter<BaseRecyVi
                 });
             }
         }
+
+        holder.getItemView().setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                if (mItemLongClickListener != null) {
+                    return mItemLongClickListener.onItemLongClick(holder, t, position);
+                }
+                return false;
+            }
+        });
+    }
+
+    protected T getItemData(BaseRecyViewHolder holder, int position) {
+        return mDatas.get(position);
     }
 
     protected abstract void onBindItemViewHolder(BaseRecyViewHolder holder, T t, int position);
@@ -259,12 +274,20 @@ public abstract class BaseRecyAdapter<T> extends RecyclerView.Adapter<BaseRecyVi
         return mDatas;
     }
 
-    public interface OnRecyclerViewItemClickerListener<T> {
-        void onItemClick(BaseRecyViewHolder view, Object data, int position);
+    public interface OnRecyclerViewItemClickListener<T> {
+        void onItemClick(BaseRecyViewHolder holder, T data, int position);
     }
 
-    public void setOnItemClickListener(OnRecyclerViewItemClickerListener<T> itemClickListener) {
+    public void setOnItemClickListener(OnRecyclerViewItemClickListener<T> itemClickListener) {
         mItemClickListener = itemClickListener;
+    }
+
+    public interface OnRecyclerViewItemLongClickListener<T> {
+        boolean onItemLongClick(BaseRecyViewHolder holder, T data, int position);
+    }
+
+    public void setOnItemLongClickListener(OnRecyclerViewItemLongClickListener<T> itemLongClickListener) {
+        mItemLongClickListener = itemLongClickListener;
     }
 
     public interface OnItemChildClickListener<T> {

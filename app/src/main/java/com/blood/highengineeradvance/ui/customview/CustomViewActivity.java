@@ -1,9 +1,8 @@
 package com.blood.highengineeradvance.ui.customview;
 
-import android.content.SyncStatusObserver;
 import android.graphics.Paint;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.blood.highengineeradvance.R;

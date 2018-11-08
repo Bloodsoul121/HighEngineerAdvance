@@ -1,6 +1,5 @@
 package com.blood.highengineeradvance;
 
-
 import android.app.Application;
 
 public class MainApplication extends Application {

@@ -1,5 +1,6 @@
 package com.blood.highengineeradvance.toutiao.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,14 +9,17 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.blood.highengineeradvance.R;
+import com.blood.highengineeradvance.toutiao.channel2.ChannelHelper2;
 import com.blood.highengineeradvance.toutiao.view.CustomPageTextView;
 import com.blood.highengineeradvance.util.KeyboardUtils;
 import com.viewpagerindicator.TabPageIndicator;
@@ -25,6 +29,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
+    private Context mContext;
     private View mFragmentView;
     private HomeAdapter mAdapter;
     private List<Fragment> mDatas;
@@ -34,8 +39,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private Group mGroupSearchBar;
     private Group mGroupSearchEdit;
     private EditText mSearchEditText;
-    private TextView mSearchResultTextView;
     private Group mGroupNews;
+    private Group mGroupSearchResult;
+    private ImageView mImgCancel;
+
+//    private ChannelHelper mChannelHelper;
+    private ChannelHelper2 mChannelHelper;
 
     public static HomeFragment newInstance() {
         HomeFragment fragment = new HomeFragment();
@@ -49,9 +58,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (mFragmentView == null) {
+            mContext = getContext();
             mFragmentView = inflater.inflate(R.layout.layout_fragment_home, container, false);
             initTitleBar(mFragmentView);
             initFragmentView(mFragmentView);
+//            mChannelHelper = new ChannelHelper(mContext); // 分开布局实现，有点丑，还有问题
+            mChannelHelper = new ChannelHelper2(mContext); // 整体实现
         }
         return mFragmentView;
     }
@@ -64,6 +76,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mIndicator.setViewPager(viewPager);
         initListener(mIndicator);
         initData();
+
+        ImageView imgMore = fragmentView.findViewById(R.id.more);
+        imgMore.setOnClickListener(this);
     }
 
     private void initListener(TabPageIndicator indicator) {
@@ -139,6 +154,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         ImageView imgBack = view.findViewById(R.id.img_back);
         imgBack.setOnClickListener(this);
 
+        mImgCancel = view.findViewById(R.id.img_search_cancel);
+        mImgCancel.setOnClickListener(this);
+
         mSearchEditText = view.findViewById(R.id.search_edit_text);
         mSearchEditText.setFocusable(true);
         mSearchEditText.setFocusableInTouchMode(true);
@@ -152,10 +170,25 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 }
             }
         });
+        mSearchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
 
-        mSearchResultTextView = view.findViewById(R.id.search_result);
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (TextUtils.isEmpty(editable.toString())) {
+                    mImgCancel.setVisibility(View.GONE);
+                } else {
+                    mImgCancel.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         mGroupNews = view.findViewById(R.id.group_news);
+        mGroupSearchResult = view.findViewById(R.id.group_search_result);
 
         startDynamicPage();
     }
@@ -193,14 +226,20 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 mGroupSearchBar.setVisibility(View.GONE);
                 mGroupSearchEdit.setVisibility(View.VISIBLE);
                 mGroupNews.setVisibility(View.GONE);
-                mSearchResultTextView.setVisibility(View.VISIBLE);
+                mGroupSearchResult.setVisibility(View.VISIBLE);
                 KeyboardUtils.showSoftInput(mSearchEditText);
                 break;
             case R.id.img_back:
                 mGroupSearchEdit.setVisibility(View.GONE);
                 mGroupSearchBar.setVisibility(View.VISIBLE);
-                mSearchResultTextView.setVisibility(View.GONE);
+                mGroupSearchResult.setVisibility(View.GONE);
                 mGroupNews.setVisibility(View.VISIBLE);
+                break;
+            case R.id.img_search_cancel:
+                mSearchEditText.setText(null);
+                break;
+            case R.id.more:
+                mChannelHelper.showChannelDialog();
                 break;
         }
     }

@@ -86,7 +86,7 @@
         android:background="@drawable/bg_search_bar"
         android:drawableLeft="@drawable/b41"
         android:drawablePadding="6dp"
-        android:hint="哈哈哈"
+        android:hint="搜你想搜的"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
         android:textColor="#222222"
@@ -102,6 +102,17 @@
         android:layout_width="0dp"
         android:layout_height="30dp"
         android:drawableStart="@drawable/b41"/>
+
+    <ImageView
+        android:id="@+id/img_search_cancel"
+        android:visibility="gone"
+        android:src="@drawable/ams"
+        app:layout_constraintTop_toTopOf="@+id/search_edit_text"
+        app:layout_constraintBottom_toBottomOf="@+id/search_edit_text"
+        app:layout_constraintRight_toRightOf="@+id/search_edit_text"
+        android:layout_marginRight="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/tv_search"

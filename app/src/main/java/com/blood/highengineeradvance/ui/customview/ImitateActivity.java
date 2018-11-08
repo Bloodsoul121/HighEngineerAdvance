@@ -4,9 +4,9 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.blood.highengineeradvance.R;
 import com.blood.highengineeradvance.ui.customview.imitate.MapView;
 import com.blood.highengineeradvance.ui.customview.imitate.StarView;
-import com.blood.highengineeradvance.util.LogUtil;
 
 public class ImitateActivity extends AppCompatActivity {
 
