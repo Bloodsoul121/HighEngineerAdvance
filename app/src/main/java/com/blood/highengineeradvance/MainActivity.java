@@ -19,6 +19,7 @@ import com.blood.highengineeradvance.ui.customview.CustomLayoutActivity;
 import com.blood.highengineeradvance.ui.customview.CustomViewActivity;
 import com.blood.highengineeradvance.ui.customview.ImitateActivity;
 import com.blood.highengineeradvance.util.LogUtil;
+import com.blood.highengineeradvance.video.VideoActivity;
 import com.tbruyelle.rxpermissions2.Permission;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
@@ -92,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        onClick(4);
+//        onClick(5);
     }
 
     @SuppressLint("MissingPermission")
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         mDatas.add("仿酷 View");
         mDatas.add("自定义布局 View");
         mDatas.add("仿 今日头条");
+        mDatas.add("流视频");
     }
 
     private void onClick(int position) {
@@ -126,6 +128,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 4:
                 startActivity(ToutiaoActivity.class);
+                break;
+            case 5:
+                startActivity(VideoActivity.class);
                 break;
         }
     }
