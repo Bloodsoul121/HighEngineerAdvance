@@ -19,6 +19,7 @@ import com.blood.highengineeradvance.ui.customview.CustomLayoutActivity;
 import com.blood.highengineeradvance.ui.customview.CustomViewActivity;
 import com.blood.highengineeradvance.ui.customview.ImitateActivity;
 import com.blood.highengineeradvance.util.LogUtil;
+import com.blood.highengineeradvance.video.ijk.IjkOther1Activity;
 import com.blood.highengineeradvance.video.ijk.IjkplayerActivity;
 import com.blood.highengineeradvance.video.vitamio.HighVideoActivity;
 import com.blood.highengineeradvance.video.vitamio.VideoActivity;
@@ -118,6 +119,7 @@ public class MainActivity extends AppCompatActivity {
         mDatas.add("流视频 vitamio 5.0");
         mDatas.add("流视频 自定义控制条");
         mDatas.add("流视频 bilibili ijkplayer");
+        mDatas.add("流视频 bilibili ijkplayer 自定义");
         mDatas.add("Webview");
     }
 
@@ -148,6 +150,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case 8:
+                startActivity(IjkOther1Activity.class);
+                break;
+            case 9:
                 startActivity(WebviewActivity.class);
                 break;
         }

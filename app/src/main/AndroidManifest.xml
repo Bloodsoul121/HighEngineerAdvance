@@ -56,7 +56,8 @@
             android:name=".video.vitamio.HighVideoActivity"
             android:screenOrientation="sensorLandscape" />
         <activity android:name=".video.ijk.IjkplayerActivity" />
-        <activity android:name=".webview.WebviewActivity"></activity>
+        <activity android:name=".webview.WebviewActivity" />
+        <activity android:name=".video.ijk.IjkOther1Activity"></activity>
     </application>
 
 </manifest>
