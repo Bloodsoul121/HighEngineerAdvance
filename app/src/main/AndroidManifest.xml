@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.blood.highengineeradvance">
 
-    <!--test rxpermission-->
+    <!-- test rxpermission -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -15,7 +15,7 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <!--vitamio-->
+    <!-- vitamio -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -45,13 +45,15 @@
         <activity
             android:name=".toutiao.ToutiaoActivity"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".video.VideoActivity"></activity>
+        <activity android:name=".video.VideoActivity" />
         <activity
             android:name="io.vov.vitamio.activity.InitActivity"
             android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".video.HighVideoActivity"
+            android:screenOrientation="sensorLandscape"/>
     </application>
 
 </manifest>

@@ -19,6 +19,7 @@ import com.blood.highengineeradvance.ui.customview.CustomLayoutActivity;
 import com.blood.highengineeradvance.ui.customview.CustomViewActivity;
 import com.blood.highengineeradvance.ui.customview.ImitateActivity;
 import com.blood.highengineeradvance.util.LogUtil;
+import com.blood.highengineeradvance.video.HighVideoActivity;
 import com.blood.highengineeradvance.video.VideoActivity;
 import com.tbruyelle.rxpermissions2.Permission;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -113,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         mDatas.add("自定义布局 View");
         mDatas.add("仿 今日头条");
         mDatas.add("流视频");
+        mDatas.add("流视频 自定义控制条");
     }
 
     private void onClick(int position) {
@@ -131,6 +133,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 5:
                 startActivity(VideoActivity.class);
+                break;
+            case 6:
+                startActivity(HighVideoActivity.class);
                 break;
         }
     }
