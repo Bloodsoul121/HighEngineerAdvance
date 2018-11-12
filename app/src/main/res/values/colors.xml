@@ -7,4 +7,6 @@
     <color name="white">#FFFFFF</color>
     <color name="whiteTransparent">#88FFFFFF</color>
     <color name="transparent">#00000000</color>
+
+    <color name="ijk_transparent_dark">#77000000</color>
 </resources>

@@ -1,4 +1,4 @@
-package com.blood.highengineeradvance.video;
+package com.blood.highengineeradvance.video.vitamio;
 
 import android.net.Uri;
 import android.os.Bundle;

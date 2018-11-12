@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context="com.blood.highengineeradvance.video.VideoActivity">
+    tools:context="com.blood.highengineeradvance.video.vitamio.VideoActivity">
 
     <io.vov.vitamio.widget.CenterLayout
         android:id="@+id/centerlayout"

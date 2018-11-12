@@ -45,15 +45,18 @@
         <activity
             android:name=".toutiao.ToutiaoActivity"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".video.VideoActivity" />
+        <activity android:name=".video.vitamio.VideoActivity" />
         <activity
             android:name="io.vov.vitamio.activity.InitActivity"
             android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name=".video.HighVideoActivity"
-            android:screenOrientation="sensorLandscape"/>
+        <activity
+            android:name=".video.vitamio.HighVideoActivity"
+            android:screenOrientation="sensorLandscape" />
+        <activity android:name=".video.ijk.IjkplayerActivity" />
+        <activity android:name=".webview.WebviewActivity"></activity>
     </application>
 
 </manifest>
