@@ -20,6 +20,7 @@ import com.blood.highengineeradvance.ui.customview.CustomViewActivity;
 import com.blood.highengineeradvance.ui.customview.ImitateActivity;
 import com.blood.highengineeradvance.util.LogUtil;
 import com.blood.highengineeradvance.video.ijk.IjkOther1Activity;
+import com.blood.highengineeradvance.video.ijk.IjkOther2Activity;
 import com.blood.highengineeradvance.video.ijk.IjkplayerActivity;
 import com.blood.highengineeradvance.video.vitamio.HighVideoActivity;
 import com.blood.highengineeradvance.video.vitamio.VideoActivity;
@@ -119,7 +120,8 @@ public class MainActivity extends AppCompatActivity {
         mDatas.add("流视频 vitamio 5.0");
         mDatas.add("流视频 自定义控制条");
         mDatas.add("流视频 bilibili ijkplayer");
-        mDatas.add("流视频 bilibili ijkplayer 自定义");
+        mDatas.add("流视频 bilibili ijkplayer 自定义1");
+        mDatas.add("流视频 bilibili ijkplayer 自定义2");
         mDatas.add("Webview");
     }
 
@@ -153,6 +155,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(IjkOther1Activity.class);
                 break;
             case 9:
+                String videoPath2 = "http://flashmedia.eastday.com/newdate/news/2016-11/shznews1125-19.mp4";
+                String videoTitle2 = "BigBuckBunny";
+                Intent intent2 = IjkOther2Activity.newIntent(this, videoPath2, videoTitle2);
+                startActivity(intent2);
+                break;
+            case 10:
                 startActivity(WebviewActivity.class);
                 break;
         }

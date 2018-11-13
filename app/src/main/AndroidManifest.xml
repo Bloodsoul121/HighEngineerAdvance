@@ -57,7 +57,9 @@
             android:screenOrientation="sensorLandscape" />
         <activity android:name=".video.ijk.IjkplayerActivity" />
         <activity android:name=".webview.WebviewActivity" />
-        <activity android:name=".video.ijk.IjkOther1Activity"></activity>
+        <activity android:name=".video.ijk.IjkOther1Activity" />
+        <activity android:name=".video.ijk.IjkOther2Activity"
+            android:configChanges="orientation"/>
     </application>
 
 </manifest>
