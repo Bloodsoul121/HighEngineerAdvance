@@ -14,4 +14,9 @@
         <attr name="padding" format="dimension"/>
     </declare-styleable>
 
+    <declare-styleable name="BottomBehavior">
+        <attr name="anchor_id" format="reference"/>
+        <attr name="bottom_padding" format="float"/>
+    </declare-styleable>
+
 </resources>

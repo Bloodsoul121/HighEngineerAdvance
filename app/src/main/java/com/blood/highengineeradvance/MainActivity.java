@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.blood.highengineeradvance.material_design.MaterialDesignActivity;
 import com.blood.highengineeradvance.toutiao.ToutiaoActivity;
 import com.blood.highengineeradvance.ui.customview.CustomLayoutActivity;
 import com.blood.highengineeradvance.ui.customview.CustomViewActivity;
@@ -123,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         mDatas.add("流视频 bilibili ijkplayer 自定义1");
         mDatas.add("流视频 bilibili ijkplayer 自定义2");
         mDatas.add("Webview");
+        mDatas.add("Material Design");
     }
 
     private void onClick(int position) {
@@ -162,6 +164,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 10:
                 startActivity(WebviewActivity.class);
+                break;
+            case 11:
+                startActivity(MaterialDesignActivity.class);
                 break;
         }
     }

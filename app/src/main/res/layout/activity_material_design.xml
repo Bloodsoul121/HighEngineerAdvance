@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.blood.highengineeradvance.material_design.MaterialDesignActivity">
+
+    <Button
+        android:onClick="skipToToolbar"
+        android:text="Toolbar"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:onClick="skipToToolbar2"
+        android:text="Toolbar2"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:onClick="skipToSnackbar"
+        android:text="Snackbar"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:onClick="skipToAppBarLayout"
+        android:text="AppBarLayout"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:onClick="skipToCollapsingToolbarLayout"
+        android:text="CollapsingToolbarLayout"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:onClick="skipToFloatingActionButton"
+        android:text="FloatingActionButton"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:onClick="skipToNestedScrollView"
+        android:text="NestedScrollView"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:onClick="skipToBottomSheetDialog"
+        android:text="BottomSheetDialog"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:onClick="skipToDemo1"
+        android:text="仿 擂台排行榜 界面"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

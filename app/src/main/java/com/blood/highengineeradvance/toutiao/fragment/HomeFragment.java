@@ -42,6 +42,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private Group mGroupNews;
     private Group mGroupSearchResult;
     private ImageView mImgCancel;
+    private boolean mIsRunning = true;
 
 //    private ChannelHelper mChannelHelper;
     private ChannelHelper2 mChannelHelper;
@@ -190,6 +191,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mGroupNews = view.findViewById(R.id.group_news);
         mGroupSearchResult = view.findViewById(R.id.group_search_result);
 
+        mIsRunning = true;
         startDynamicPage();
     }
 
@@ -197,7 +199,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         runOnThread(new Runnable() {
             @Override
             public void run() {
-                while (true) {
+                while (mIsRunning) {
                     try {
                         Thread.sleep(5000);
                     } catch (InterruptedException e) {
@@ -249,7 +251,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void runOnUiThread(Runnable r) {
-        getActivity().runOnUiThread(r);
+        if (getActivity() != null) {
+            getActivity().runOnUiThread(r);
+        }
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mIsRunning = false;
+    }
 }

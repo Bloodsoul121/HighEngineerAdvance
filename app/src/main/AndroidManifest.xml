@@ -58,8 +58,19 @@
         <activity android:name=".video.ijk.IjkplayerActivity" />
         <activity android:name=".webview.WebviewActivity" />
         <activity android:name=".video.ijk.IjkOther1Activity" />
-        <activity android:name=".video.ijk.IjkOther2Activity"
-            android:configChanges="orientation"/>
+        <activity
+            android:name=".video.ijk.IjkOther2Activity"
+            android:configChanges="orientation" />
+        <activity android:name=".material_design.MaterialDesignActivity" />
+        <activity android:name=".material_design.snackbar.SnakBarActivity" />
+        <activity android:name=".material_design.appbar_layout.AppBarLayoutActivity" />
+        <activity android:name=".material_design.toolbar.ToolbarActivity" />
+        <activity android:name=".material_design.toolbar.Toolbar2Activity" />
+        <activity android:name=".material_design.collapsing_toolbar_layout.CollapsingToolbarActivity" />
+        <activity android:name=".material_design.floating_action_button.FloatingActionButtonActivity" />
+        <activity android:name=".material_design.nested_scrollview.NestedScrollViewActivity" />
+        <activity android:name=".material_design.bottom_sheet_dialog.BottomSheetDialogActivity" />
+        <activity android:name=".material_design.demo.Demo1Activity"></activity>
     </application>
 
 </manifest>
