@@ -25,6 +25,7 @@ import com.blood.highengineeradvance.video.ijk.IjkOther2Activity;
 import com.blood.highengineeradvance.video.ijk.IjkplayerActivity;
 import com.blood.highengineeradvance.video.vitamio.HighVideoActivity;
 import com.blood.highengineeradvance.video.vitamio.VideoActivity;
+import com.blood.highengineeradvance.view.ViewActivity;
 import com.blood.highengineeradvance.webview.WebviewActivity;
 import com.tbruyelle.rxpermissions2.Permission;
 import com.tbruyelle.rxpermissions2.RxPermissions;
@@ -125,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
         mDatas.add("流视频 bilibili ijkplayer 自定义2");
         mDatas.add("Webview");
         mDatas.add("Material Design");
+        mDatas.add("View");
     }
 
     private void onClick(int position) {
@@ -167,6 +169,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 11:
                 startActivity(MaterialDesignActivity.class);
+                break;
+            case 12:
+                startActivity(ViewActivity.class);
                 break;
         }
     }

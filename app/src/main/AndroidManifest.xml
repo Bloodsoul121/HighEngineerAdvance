@@ -70,7 +70,9 @@
         <activity android:name=".material_design.floating_action_button.FloatingActionButtonActivity" />
         <activity android:name=".material_design.nested_scrollview.NestedScrollViewActivity" />
         <activity android:name=".material_design.bottom_sheet_dialog.BottomSheetDialogActivity" />
-        <activity android:name=".material_design.demo.Demo1Activity"></activity>
+        <activity android:name=".material_design.demo.Demo1Activity" />
+        <activity android:name=".view.ViewActivity" />
+        <activity android:name=".view.recyclerview.RecyclerViewActivity"></activity>
     </application>
 
 </manifest>
