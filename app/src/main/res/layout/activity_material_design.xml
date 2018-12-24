@@ -96,4 +96,14 @@
         android:layout_height="wrap_content"
         tools:ignore="HardcodedText" />
 
+    <Button
+        android:onClick="skipToTabLayout"
+        android:text="TabLayout"
+        android:textAllCaps="false"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+
 </LinearLayout>

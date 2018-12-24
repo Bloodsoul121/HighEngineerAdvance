@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.blood.highengineeradvance.material_design.MaterialDesignActivity;
+import com.blood.highengineeradvance.project.ProjectActivity;
 import com.blood.highengineeradvance.toutiao.ToutiaoActivity;
 import com.blood.highengineeradvance.ui.customview.CustomLayoutActivity;
 import com.blood.highengineeradvance.ui.customview.CustomViewActivity;
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        onClick(5);
+//        onClick(13);
     }
 
     @SuppressLint("MissingPermission")
@@ -127,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         mDatas.add("Webview");
         mDatas.add("Material Design");
         mDatas.add("View");
+        mDatas.add("项目练习");
     }
 
     private void onClick(int position) {
@@ -172,6 +174,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 12:
                 startActivity(ViewActivity.class);
+                break;
+            case 13:
+                startActivity(ProjectActivity.class);
                 break;
         }
     }

@@ -13,6 +13,7 @@ import com.blood.highengineeradvance.material_design.demo.Demo1Activity;
 import com.blood.highengineeradvance.material_design.floating_action_button.FloatingActionButtonActivity;
 import com.blood.highengineeradvance.material_design.nested_scrollview.NestedScrollViewActivity;
 import com.blood.highengineeradvance.material_design.snackbar.SnakBarActivity;
+import com.blood.highengineeradvance.material_design.tab_layout.TabLayoutActivity;
 import com.blood.highengineeradvance.material_design.toolbar.Toolbar2Activity;
 import com.blood.highengineeradvance.material_design.toolbar.ToolbarActivity;
 
@@ -64,4 +65,7 @@ public class MaterialDesignActivity extends AppCompatActivity {
         startActivity(Demo1Activity.class);
     }
 
+    public void skipToTabLayout(View view) {
+        startActivity(TabLayoutActivity.class);
+    }
 }

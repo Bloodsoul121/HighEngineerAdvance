@@ -72,7 +72,12 @@
         <activity android:name=".material_design.bottom_sheet_dialog.BottomSheetDialogActivity" />
         <activity android:name=".material_design.demo.Demo1Activity" />
         <activity android:name=".view.ViewActivity" />
-        <activity android:name=".view.recyclerview.RecyclerViewActivity"></activity>
+        <activity android:name=".view.recyclerview.RecyclerViewActivity" />
+        <activity android:name=".project.ProjectActivity" />
+        <activity android:name=".project.cases.Case1Activity" />
+        <activity android:name=".project.cases.Case2Activity" />
+        <activity android:name=".project.case3.Case3Activity" />
+        <activity android:name=".material_design.tab_layout.TabLayoutActivity"></activity>
     </application>
 
 </manifest>
