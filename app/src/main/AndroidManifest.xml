@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.blood.highengineeradvance">
-
     <!-- test rxpermission -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -14,8 +13,7 @@
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.READ_SMS" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <!-- vitamio -->
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- vitamio -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -29,6 +27,8 @@
         android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".mediaplayer.android.AndroidMediaPlayerActivity"></activity>
+        <activity android:name=".mediaplayer.MediaPlayerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -77,7 +77,7 @@
         <activity android:name=".project.cases.Case1Activity" />
         <activity android:name=".project.cases.Case2Activity" />
         <activity android:name=".project.case3.Case3Activity" />
-        <activity android:name=".material_design.tab_layout.TabLayoutActivity"></activity>
+        <activity android:name=".material_design.tab_layout.TabLayoutActivity" />
     </application>
 
 </manifest>

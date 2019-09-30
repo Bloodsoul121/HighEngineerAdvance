@@ -35,7 +35,7 @@
         <com.blood.highengineeradvance.ui.customview.view.CircleView
             android:id="@+id/circleview"
             android:layout_width="match_parent"
-            android:layout_height="250dp"/>
+            android:layout_height="250dp" />
 
         <com.blood.highengineeradvance.ui.customview.view.LoveView
             android:id="@+id/loveview"

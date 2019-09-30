@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.blood.highengineeradvance.material_design.MaterialDesignActivity;
+import com.blood.highengineeradvance.mediaplayer.MediaPlayerActivity;
 import com.blood.highengineeradvance.project.ProjectActivity;
 import com.blood.highengineeradvance.toutiao.ToutiaoActivity;
 import com.blood.highengineeradvance.ui.customview.CustomLayoutActivity;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         requestPermissions();
     }
 
+    @SuppressLint("CheckResult")
     private void requestPermissions() {
         RxPermissions rxPermission = new RxPermissions(this);
         rxPermission
@@ -129,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
         mDatas.add("Material Design");
         mDatas.add("View");
         mDatas.add("项目练习");
+        mDatas.add("音频播放器");
     }
 
     private void onClick(int position) {
@@ -177,6 +180,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 13:
                 startActivity(ProjectActivity.class);
+                break;
+            case 14:
+                startActivity(MediaPlayerActivity.class);
                 break;
         }
     }
