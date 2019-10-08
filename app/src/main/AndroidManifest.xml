@@ -27,7 +27,7 @@
         android:roundIcon="@drawable/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mediaplayer.android.AndroidMediaPlayerActivity"></activity>
+        <activity android:name=".mediaplayer.android.AndroidMPActivity"></activity>
         <activity android:name=".mediaplayer.MediaPlayerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.blood.highengineeradvance.R;
-import com.blood.highengineeradvance.mediaplayer.android.AndroidMediaPlayerActivity;
+import com.blood.highengineeradvance.mediaplayer.android.AndroidMPActivity;
 
 public class MediaPlayerActivity extends AppCompatActivity {
 
@@ -17,7 +17,7 @@ public class MediaPlayerActivity extends AppCompatActivity {
     }
 
     public void clickBtn1(View view) {
-        startActivity(new Intent(this, AndroidMediaPlayerActivity.class));
+        startActivity(new Intent(this, AndroidMPActivity.class));
     }
 
     public void clickBtn2(View view) {

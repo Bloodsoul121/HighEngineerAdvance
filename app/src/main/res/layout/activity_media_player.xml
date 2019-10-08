@@ -172,8 +172,7 @@
             <TextView
                 android:id="@+id/cur_progress"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="00:00" />
+                android:layout_height="wrap_content" />
 
             <!--            //设置“进度条”-->
 
@@ -188,8 +187,7 @@
             <TextView
                 android:id="@+id/total_progress"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="02:30" />
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 

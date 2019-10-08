@@ -1,6 +1,6 @@
 package com.blood.highengineeradvance.mediaplayer.android;
 
-import android.media.MediaPlayer;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.blood.highengineeradvance.R;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -19,7 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class AndroidMediaPlayerActivity extends AppCompatActivity {
+public class AndroidMPActivity extends AppCompatActivity {
 
     @BindView(R.id.cur_progress)
     TextView mCurProgress;
@@ -30,28 +29,28 @@ public class AndroidMediaPlayerActivity extends AppCompatActivity {
     @BindView(R.id.play)
     ImageView mPlay;
 
-    private String mMusicPath;
-    private boolean mIsFirstPlay;
-    private MediaPlayer mMediaPlayer;
+    private AndroidMPPresenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media_player);
         ButterKnife.bind(this);
+        mPresenter = new AndroidMPPresenter(this, this);
+        mPresenter.init();
         init();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mMediaPlayer.reset();
+        mPresenter.onDestroy();
     }
 
+    @SuppressLint("SetTextI18n")
     private void init() {
-        mIsFirstPlay = true;
-        mMediaPlayer = new MediaPlayer();
-        mMusicPath = "file:///android_asset/music/music.mp3";
+        mCurProgress.setText("00:00");
+        mTotalProgress.setText("00:00");
         mPlay.setActivated(false);
     }
 
@@ -59,13 +58,7 @@ public class AndroidMediaPlayerActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.play:
-                if (mIsFirstPlay) {
-                    mIsFirstPlay = false;
-                    play();
-                    mPlay.setActivated(true);
-                } else {
-                    doPlayOrPause();
-                }
+                mPresenter.playOrPause();
                 break;
             case R.id.pre:
                 break;
@@ -74,25 +67,15 @@ public class AndroidMediaPlayerActivity extends AppCompatActivity {
         }
     }
 
-    private void play() {
-        try {
-            mMediaPlayer.reset();//进行重置
-            mMediaPlayer.setDataSource(mMusicPath);
-            mMediaPlayer.prepare();
-            mMediaPlayer.start();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void onPlayOrPause(boolean isPlay) {
+        mPlay.setActivated(isPlay);
     }
 
-    private void doPlayOrPause() {
-        if (mMediaPlayer.isPlaying()) {
-            mMediaPlayer.stop();
-            mPlay.setActivated(false);
-        } else {
-            mMediaPlayer.start();
-            mPlay.setActivated(true);
-        }
+    public void onMediaProgressChanged(int progress, int totalTime) {
+        mSeekbar.setMax(totalTime);
+        mSeekbar.setProgress(progress);
+        mCurProgress.setText(formatTime(progress));
+        mTotalProgress.setText(formatTime(totalTime));
     }
 
     private String formatTime(int length) {
@@ -100,5 +83,4 @@ public class AndroidMediaPlayerActivity extends AppCompatActivity {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("mm:ss", Locale.CHINA);//规定需要形式
         return simpleDateFormat.format(date);
     }
-
 }
