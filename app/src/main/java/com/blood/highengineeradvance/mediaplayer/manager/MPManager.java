@@ -48,14 +48,15 @@ public class MPManager implements MediaPlayer.OnSeekCompleteListener, MediaPlaye
     }
 
     private MPManager() {
-        init();
     }
 
     public void init() {
-        mMediaPlayer = new MediaPlayer();
-        mMediaPlayer.setOnSeekCompleteListener(this);
-        mMediaPlayer.setOnCompletionListener(this);
-        mMediaPlayer.setOnPreparedListener(this);
+        if (mMediaPlayer == null) {
+            mMediaPlayer = new MediaPlayer();
+            mMediaPlayer.setOnSeekCompleteListener(this);
+            mMediaPlayer.setOnCompletionListener(this);
+            mMediaPlayer.setOnPreparedListener(this);
+        }
         startProgressTask();
     }
 
@@ -76,9 +77,13 @@ public class MPManager implements MediaPlayer.OnSeekCompleteListener, MediaPlaye
     }
 
     public void recycle() {
+        mTimer.cancel();
+        mTimer = null;
         stop();
         mMediaPlayer.release();
-        mTimer.cancel();
+        mMediaPlayer = null; // 这里必须要置null，不然状态异常
+        mCurMusic = null;
+        mPosition = 0;
     }
 
     public void setMediaList(List<Music> list) {
@@ -115,6 +120,7 @@ public class MPManager implements MediaPlayer.OnSeekCompleteListener, MediaPlaye
 
     private void play() {
         try {
+            mMediaPlayer.stop();
             mMediaPlayer.reset();//进行重置
 //            mMediaPlayer.setDataSource(mMusicPath);
             AssetFileDescriptor fd = MainApplication.getApplication().getAssets().openFd(mCurMusic.path);
@@ -150,6 +156,7 @@ public class MPManager implements MediaPlayer.OnSeekCompleteListener, MediaPlaye
         mIsRunning = false;
         if (isPlaying()) {
             mMediaPlayer.stop();
+            mMediaPlayer.reset();
         }
     }
 

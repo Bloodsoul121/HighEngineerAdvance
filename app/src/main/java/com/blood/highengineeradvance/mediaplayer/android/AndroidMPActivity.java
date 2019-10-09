@@ -37,6 +37,7 @@ public class AndroidMPActivity extends AppCompatActivity implements MPManager.Ca
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_media_player);
         ButterKnife.bind(this);
+        MPManager.getInstance().init();
         MPManager.getInstance().addCallback(this);
         init();
         initMediaData();
