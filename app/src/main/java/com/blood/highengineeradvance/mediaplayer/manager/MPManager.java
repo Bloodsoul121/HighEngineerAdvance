@@ -148,7 +148,9 @@ public class MPManager implements MediaPlayer.OnSeekCompleteListener, MediaPlaye
 
     public void stop() {
         mIsRunning = false;
-        mMediaPlayer.stop();
+        if (isPlaying()) {
+            mMediaPlayer.stop();
+        }
     }
 
     private void refreshProgress() {
