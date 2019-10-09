@@ -19,6 +19,8 @@ import android.view.MotionEvent;
 
 public class RoundImageView extends AppCompatImageView {
 
+    private PaintFlagsDrawFilter mPaintFlagsDrawFilter;
+
     public RoundImageView(Context context) {
         super(context);
         init();
@@ -34,6 +36,7 @@ public class RoundImageView extends AppCompatImageView {
         mFilterPaint.setAntiAlias(true);
         mPaint.setAntiAlias(true);
         mPaint.setFilterBitmap(true);
+        mPaintFlagsDrawFilter = new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
     }
 
     private float mMarginLeft;
@@ -93,7 +96,7 @@ public class RoundImageView extends AppCompatImageView {
             return;
         }
 
-        canvas.setDrawFilter(new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG));
+        canvas.setDrawFilter(mPaintFlagsDrawFilter);
         // 控件默认长、宽
         float defaultWidth = getWidth();
         float defaultHeight = getHeight();

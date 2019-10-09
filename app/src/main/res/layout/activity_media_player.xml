@@ -130,8 +130,8 @@
 
             <ImageView
                 android:id="@+id/play"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="10dp"
@@ -142,8 +142,8 @@
 
             <ImageView
                 android:id="@+id/pre"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
@@ -155,8 +155,8 @@
 
             <ImageView
                 android:id="@+id/next"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="30dp"
                 android:layout_toEndOf="@id/play"
@@ -187,9 +187,13 @@
 
             <SeekBar
                 android:id="@+id/seekbar"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:maxHeight="2dp"
+                android:progressDrawable="@drawable/progress_style12"
+                android:thumb="@drawable/seekbar_thumb4" />
 
             <!--//设置“歌曲总时长”-->
 

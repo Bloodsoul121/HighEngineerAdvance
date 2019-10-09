@@ -13,6 +13,7 @@
         android:onClick="clickBtn1"
         android:padding="10dp"
         android:text="Android MediaPlayer"
+        android:textAllCaps="false"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -21,6 +22,7 @@
         android:onClick="clickBtn2"
         android:padding="10dp"
         android:text="IJK MediaPlayer"
+        android:textAllCaps="false"
         tools:ignore="HardcodedText" />
 
 </LinearLayout>
